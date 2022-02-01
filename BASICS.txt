@@ -1,0 +1,112 @@
+from time import sleep
+import pyttsx3
+import array as arr
+
+
+# Normal conditional use
+# print("Check you are older or your friend :)")
+# varC=input("Type your name: ")
+# varA= int(input("Input your age: "))
+# varB= int(input("Input your age: "))
+# if varA>varB:
+#     print(varC + ", you are older then your friend.")
+# else:
+#     print(varC + ", you are younger then your friend.")
+
+# function to check age validation
+# def check_age(x,y,z):
+#     if x > y:
+#         print(z,"your are older then your friend.")
+#     elif x < y:
+#         print(z," your friend is older then you.")
+#     else:
+#         print(z," you and your friend have same age.")
+#     v=x+y
+#     return v
+#
+# varA= input("Enter your name: ")
+# varB= int(input("Enter your age: "))
+# varC= int(input("Enter your friends age: "))
+#
+# varD= check_age(varB,varC,varA)
+# print("Total age of you two guys is: ",varD)
+
+# String rev
+# def revstr(a_string):
+#     new_strings = []
+#     index = len(a_string)
+#     while index:
+#         index -= 1
+#         print("first: ", new_strings)
+#         new_strings.append(a_string[index])
+#         print("second: ", new_strings)
+#     return ''.join(new_strings)
+#
+#
+# varA = input("Full name: ")
+# varA = revstr(varA)
+# print(varA)
+
+
+# ary = [1, 2, 3, 4, 5]
+# ary.append(666)
+# ary[2] = "X"
+# print(ary)
+
+# dic
+# myClass = {
+#     # "name": "Bishal",
+#     # "age": 25,
+#     # "Phone": 123
+#     0: input("Enter name: "),
+#     "age": int(input("Enter age: ")),
+#     "phone": int(input("Enter phone: "))
+# }
+# print(myClass.get(0))
+# print(myClass)
+
+# textTospeech
+# numlen = 108
+# while numlen:
+#     pyttsx3.speak(numlen)
+#     numlen -= 1
+#     sleep(1.5)
+
+# n = [2,4,6,8]
+# res = 1
+# for x in n[1:3]:
+#     res *=x
+#
+# print(res)
+
+
+# array with sorting
+# value = arr.array("i", [])
+# x = int(input("Enter the length of array: "))
+# for i in range(x):
+#     n = int(input(f"Enter {i+1} number for array: "))
+#     value.append(n)
+#
+# for i in range(x):
+#     for j in range(x):
+#         if value[i] < value[j]:
+#             value[i], value[j] = value[j], value[i]
+#
+# print(value)
+
+# word = input("Enter a word: ")
+# guess_word = ""
+# counter = 0
+# limit = 3
+# limit_check = False
+# while full_word != guess_word and not(limit_Off):
+#     if counter < limit:
+#         guess_word = input("Enter a guess word: ")
+#         counter += 1
+#     else:
+#         limit_Off = True
+#
+# if limit_Off:
+#     print("You Lose out of guesses.")
+# else:
+#     print("You win !!!")
