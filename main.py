@@ -3,7 +3,10 @@ import random
 
 def take_input():
     x = 0
-    full_word = input("Enter a word: ")
+    try:
+        full_word = input("Enter a word: ")
+    except ValueError:
+        print("Error in word.")
     length_true = len(full_word)
     lengths = int(length_true / 2)
     full_list = list(full_word)
