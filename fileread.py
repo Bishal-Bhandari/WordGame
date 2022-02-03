@@ -1,7 +1,5 @@
 import secrets
 
-import pandas as pd
-
 
 class ReadFile:
     def __init__(self,filedata):

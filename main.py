@@ -9,7 +9,7 @@ def take_input():
         exceldata = pd.read_excel(r'Words.xlsx')
         wordObj = ReadFile(exceldata)
         full_word = wordObj.excel_file()
-        # full_word = input("Enter a word: ")
+        full_word = full_word.upper()
     except ValueError:
         print("Error in File.")
     length_true = len(full_word)
@@ -20,7 +20,7 @@ def take_input():
         full_list = random.sample(full_list, length_true)
         full_list = ''.join(full_list)
         x += 1
-    print("Word is: " + full_list + " and you have " + guessnumber + " guesses.")
+    print("Word is: " + full_list + ".\nYou have " + guessnumber + " guesses in total.")
     return [lengths, full_word]
 
 
@@ -31,7 +31,8 @@ def check_words():
     limit_off = False
     while list_data[1] != guess_word and not limit_off:
         if counter < list_data[0]:
-            guess_word = input(f"This is chance " + str(counter+1) + ". Enter a guess word: ")
+            guess_word = input(f"\nThis is chance " + str(counter+1) + ". Enter a guess word: ")
+            guess_word = guess_word.upper()
             counter += 1
         else:
             limit_off = True
@@ -41,9 +42,9 @@ def check_words():
 def result():
     result_data = check_words()
     if result_data:
-        print("You Lose!!! Better luck next time.")
+        print("You LOSE!!! Better luck next time.")
     else:
-        print("You win!!! Congratulation.")
+        print("You win!!! CONGRATULATION.")
 
 
 result()
