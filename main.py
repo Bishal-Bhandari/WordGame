@@ -1,7 +1,8 @@
 print("===>>WELCOME to our game word and quiz.<<===")
-choice_word = input("Please press 'a' or 1 for Word Guess Game and press 'b' or 2 for Quiz: ")
 
-def gamechoice(choice):
+
+def gamechoice():
+    choice = input("\nPlease press 'a' or 1 for Word Guess Game and press 'b' or 2 for Quiz: ")
     if choice == "a" or choice == "A" or choice == str(1):
         import Guessword
     elif choice == "b" or choice == "B" or choice == str(2):
@@ -12,4 +13,4 @@ def gamechoice(choice):
         print("Please choose from given option only.")
 
 
-gamechoice(choice_word)
+gamechoice()
