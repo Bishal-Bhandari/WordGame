@@ -6,6 +6,8 @@ def gamechoice(choice):
         import Guessword
     elif choice == "b" or choice == "B" or choice == str(2):
         print("On the way")
+    elif choice == "c" or choice == "c" or choice == str(3):
+        print("break")
     else:
         print("Please choose from given option only.")
 
