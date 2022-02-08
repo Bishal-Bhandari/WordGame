@@ -1,17 +1,21 @@
 import random
 import pandas as pd
 from fileread import ReadFile
+import secrets
+
+
 # from tkinter import *
 # window = Tk()
 
-
+full_word = ''
 def take_input():
     x = 0
     try:
         exceldata = pd.read_excel(r'Words.xlsx')
         wordobj = ReadFile(exceldata)
-        full_word = wordobj.excel_file()
-        full_word = full_word.upper()
+        global full_word  # for original word so global var
+        fullwordran = secrets.choice(wordobj.excel_file())  # for word after using random fun
+        full_word = fullwordran.upper()
     except ValueError:
         print("Error in File.")
     length_true = len(full_word)
@@ -45,6 +49,7 @@ def result():
     result_data = check_words()
     if result_data:
         print("You LOSE!!! Better luck next time.")
+        print("Correct answer is: " + full_word)
         # GUI to display result
         # lbl = Label(window, text="You Lose", fg='red', font=("Helvetica", 16))
         # lbl.place(x=60, y=50)

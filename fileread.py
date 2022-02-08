@@ -7,8 +7,7 @@ class ReadFile:
 
     def excel_file(self):
         colcountry = self.filedata['Country'].values
-        randomvalue = secrets.choice(colcountry)
-        return randomvalue
+        return colcountry
 
     def excel_file2(self):
         colcapital = self.filedata['Capital'].values
