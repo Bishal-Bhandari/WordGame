@@ -3,11 +3,10 @@ import pandas as pd
 from fileread import ReadFile
 import secrets
 
-
-# from tkinter import *
-# window = Tk()
-
 full_word = ''
+scorecount = 0
+questioncount = 0
+
 def take_input():
     x = 0
     try:
@@ -37,8 +36,7 @@ def check_words():
     limit_off = False
     while list_data[1] != guess_word and not limit_off:
         if counter < list_data[0]:
-            guess_word = input(f"\nThis is chance " + str(counter + 1) + ". Enter a guess word: ")
-            guess_word = guess_word.upper()
+            guess_word = input(f"\nThis is chance " + str(counter + 1) + ". Enter a guess word: ").upper()
             counter += 1
         else:
             limit_off = True
@@ -47,21 +45,32 @@ def check_words():
 
 def result():
     result_data = check_words()
-    if result_data:
-        print("You LOSE!!! Better luck next time.")
-        print("Correct answer is: " + full_word)
-        # GUI to display result
-        # lbl = Label(window, text="You Lose", fg='red', font=("Helvetica", 16))
-        # lbl.place(x=60, y=50)
-    else:
-        print("You win!!! CONGRATULATION.")
-        # GUI to display result
-        # lbl = Label(window, text="You Win", fg='red', font=("Helvetica", 16))
-        # lbl.place(x=60, y=50)
+    userinput = True
+    global scorecount
+    global questioncount
+    while userinput:
+        questioncount += 1
+        if result_data:
+            scorecount += 0
+            print("You LOSE!!! Better luck next time.")
+            print("Correct answer is: " + full_word)
+            print("You have " + str(scorecount) + "\\" + str(questioncount) + " answer correct.")
+            userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
+            if userchoice == "Y":
+                result()
+            else:
+                userinput = False
+                break
+        else:
+            scorecount += 1
+            print("You win!!! CONGRATULATION.")
+            print("You have " + str(scorecount) + "\\" + str(questioncount) + " answer correct.")
+            userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
+            if userchoice == "Y":
+                result()
+            else:
+                userinput = False
+                break
 
 
 result()
-# GUI
-# window.title('GWG: Guess Word Game')
-# window.geometry("300x200")
-# window.mainloop()
