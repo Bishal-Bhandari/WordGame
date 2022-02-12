@@ -8,7 +8,12 @@ def takeMainInput():
     newfileobj = ReadFile(exceldata)
     quizansCapital = newfileobj.excel_file2()
     quizansCountry =newfileobj.excel_file()
+    lencountry = len(quizansCountry)
     print(quizansCountry, quizansCapital)
+    for x in range(lencountry):
+        print("What is the capital of " + str(quizansCountry[x]))
+
+
 
 
 

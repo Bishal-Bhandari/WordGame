@@ -54,7 +54,7 @@ def result():
             scorecount += 0
             print("You LOSE!!! Better luck next time.")
             print("Correct answer is: " + full_word)
-            print("You have " + str(scorecount) + "\\" + str(questioncount) + " answer correct.")
+            print("You have " + str(scorecount) + "/" + str(questioncount) + " answer correct.")
             userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
             if userchoice == "Y":
                 result()
@@ -64,7 +64,7 @@ def result():
         else:
             scorecount += 1
             print("You win!!! CONGRATULATION.")
-            print("You have " + str(scorecount) + "\\" + str(questioncount) + " answer correct.")
+            print("You have " + str(scorecount) + "/" + str(questioncount) + " answer correct.")
             userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
             if userchoice == "Y":
                 result()
