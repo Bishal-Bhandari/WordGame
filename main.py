@@ -1,4 +1,4 @@
-print("===>>WELCOME to our game word and quiz.<<===")
+print("\n===>>WELCOME to our game word and quiz.<<===")
 
 
 def gamechoice():

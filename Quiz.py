@@ -21,12 +21,17 @@ def takeMainInput():
             input("What is the capital of " + str(quizansCountry[x]).upper() + ": ")).upper()  # user ans
         if useransCapital == str(quizansCapital[x]):
             userscore += 1
-            print("Proceeding to next question....\n")
+            print("Proceeding to the next question....\n")
         else:
             userscore += 0
-            print("Proceeding to next question....\n")
+            print("Proceeding to the next question....\n")
 
     print("Your score is " + str(userscore) + "\\" + str(totalquestion) + ".")
+    userchoice = input("\nPress \"Y\" to play again and \"N\" to exit to main menu: ").upper()
+    if userchoice == "Y":
+        takeMainInput()
+    else:
+        import main
 
 
 takeMainInput()
