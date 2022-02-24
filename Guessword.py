@@ -2,6 +2,7 @@ import random
 import pandas as pd
 from fileread import ReadFile
 import secrets
+import pyttsx3
 
 full_word = ''
 scorecount = 0
@@ -55,6 +56,7 @@ def result():
             print("You LOSE!!! Better luck next time.")
             print("Correct answer is: " + full_word)
             print("You have " + str(scorecount) + "/" + str(questioncount) + " answer correct.")
+            pyttsx3.speak("You LOSE!!! Better luck next time.")
             userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
             if userchoice == "Y":
                 result()
@@ -65,6 +67,7 @@ def result():
             scorecount += 1
             print("You win!!! CONGRATULATION.")
             print("You have " + str(scorecount) + "/" + str(questioncount) + " answer correct.")
+            pyttsx3.speak("You win!!! CONGRATULATION.")
             userchoice = input("\nPress \" Y \" to play again and \"N\" to go to the menu: ").upper()
             if userchoice == "Y":
                 result()

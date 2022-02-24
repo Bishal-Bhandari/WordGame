@@ -1,6 +1,6 @@
 import pandas as pd
 from fileread import ReadFile
-
+import pyttsx3
 userscore = 0
 totalquestion = 0
 
@@ -17,7 +17,7 @@ def takeMainInput():
         totalquestion += 1  # count num of question
         quizansCapital[x] = quizansCapital[x].upper()
         useransCapital = str(
-            input("What is the capital of " + str(quizansCountry[x]).upper() + ": ")).upper()  # user ans
+            input("(" + str(totalquestion) + "). What is the capital of " + str(quizansCountry[x]).upper() + ": ")).upper()  # user ans
         if useransCapital == str(quizansCapital[x]):
             userscore += 1
             print("Proceeding to the next question....\n")
@@ -26,6 +26,7 @@ def takeMainInput():
             print("Proceeding to the next question....\n")
 
     print("Your score is " + str(userscore) + "\\" + str(totalquestion) + ".")
+    pyttsx3.speak("Your score is " + str(userscore) + ".")
     userchoice = input("\nPress \"Y\" to play again and \"N\" to exit to main menu: ").upper()
     if userchoice == "Y":
         takeMainInput()
