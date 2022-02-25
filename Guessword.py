@@ -20,13 +20,12 @@ def take_input():
         print("Error in File.")
     length_true = len(full_word)
     lengths = int(length_true / 2)
-    guessnumber = str(lengths)
     full_list = list(full_word)
     while x < lengths:
         full_list = random.sample(full_list, length_true)
         full_list = ''.join(full_list)
         x += 1
-    print("Word is: " + full_list + ".\nYou have " + guessnumber + " guesses in total.")
+    print("Word is: " + full_list + ".\nYou have " + str(lengths) + " guesses in total.")
     return [lengths, full_word]
 
 
